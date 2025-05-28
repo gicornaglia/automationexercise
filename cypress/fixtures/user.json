@@ -6,6 +6,13 @@
   "usuarioInvalido": {
     "username": "usuario_teste",
     "password": "senha_errada"
-  }
+  },
+  
+    "usuarioCheckout": {
+    "firstname": "João",
+    "lastname": "Lima",
+    "postalCode": "1234"
+    }
+  
 }
 

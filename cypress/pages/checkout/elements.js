@@ -4,5 +4,8 @@ export const elements = {
    campoLastName: '[data-test="lastName"]',   
    campoCodigoPostal: '[data-test="postalCode"]',
    buttonContinue: '[data-test="continue"]',  
-   msgErro: '[data-test="error"]'  
+   msgErro: '[data-test="error"]',
+   msgTotal:'[data-test="total-label"]',
+   buttonFinish: '[data-test="finish"]',
+   msgThankYou: '[data-test="complete-header"]'
 }

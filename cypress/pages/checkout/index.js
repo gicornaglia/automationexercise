@@ -8,11 +8,16 @@ class Checkout {
         carrinho.clicarNoIconeDoCarrinho();
         cy.get(elCheckout.buttonCheckout).click();
     }
-    validarCampoInvalidos() {
-        cy.get(elCheckout.campoFirstName).type(''); 
-        cy.get(elCheckout.campoLastName).type('');  
-        cy.get(elCheckout.campoCodigoPostal).type(''); 
-
+    preencherFormulario() {
+        cy.fixture('user').then((dados) => {
+            cy.get(elCheckout.campoFirstName).type(dados.usuarioCheckout.firstname);
+            cy.get(elCheckout.campoLastName).type(dados.usuarioCheckout.lastname);
+            cy.get(elCheckout.campoCodigoPostal).type(dados.usuarioCheckout.postalCode);
+            cy.get(elCheckout.buttonContinue).click();
+        });
+    }
+    validarCampoInvalidos(seletorCampo) {
+        cy.get(seletorCampo).type('a'); 
         cy.get(elCheckout.buttonContinue).click();
 
         // Valida se aparece alguma mensagem de erro
