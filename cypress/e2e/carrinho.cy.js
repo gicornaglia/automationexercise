@@ -1,5 +1,5 @@
 import Login from '../pages/login';
-import carrinho from '../pages/carrinho';
+import Carrinho from '../pages/carrinho';
 import Inventory from '../pages/inventory';
 
 describe.only('Carrinho', () => {
@@ -19,18 +19,18 @@ describe.only('Carrinho', () => {
         Inventory.validarProdutoNoIcone(1);
 
         Inventory.ArmazenaNomeProduto().then((nomeProduto) => {
-            carrinho.clicarNoIconeDoCarrinho();
-            carrinho.validarProdutoNoCarrinho(nomeProduto);
+            Carrinho.clicarNoIconeDoCarrinho();
+            Carrinho.validarProdutoNoCarrinho(nomeProduto);
         });
     });
     it('Remover produto do carrinho na página do carrinho', function() {
         Login.preencherCredenciais(this.dados.usuarioValido.username, this.dados.usuarioValido.password);
         Inventory.addProdutoAoCarrinho();
         Inventory.validarProdutoNoIcone(1);
-        carrinho.clicarNoIconeDoCarrinho();
+        Carrinho.clicarNoIconeDoCarrinho();
         cy.screenshot('remover produto');
-        carrinho.removerProduto();
-        carrinho.validarRemocaoDoProduto();
+        Carrinho.removerProduto();
+        Carrinho.validarRemocaoDoProduto();
 
-    })
+    });
 })

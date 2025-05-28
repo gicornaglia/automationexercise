@@ -2,7 +2,7 @@ import {elements as elcarrinho} from "./elements.js";
 import {elements} from "../inventory/elements.js";
 
 
-class carrinho{
+class Carrinho{
     clicarNoIconeDoCarrinho() {
     cy.get(elements.buttonCarrinho).click();
   }
@@ -17,11 +17,7 @@ class carrinho{
     cy.get(elcarrinho.primeiroProduto).should('not.exist');
   }
 
-
-
-
-  
 }
 
-export default new carrinho();
+export default new Carrinho();
 export { elements };
